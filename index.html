@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0284c7">
+  <meta name="description" content="Campanha de Natal e Ano Novo: Doe R$ 10 para comprar roupas novas e comida para crianças autistas.">
+  <title>Natal Solidário TEA | Doe R$ 10 por Roupa Nova e Comida na Mesa 💙</title>
+
+  <!-- Fonte Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --primary-light: #e0f2fe;
+      --accent: #16a34a;
+      --accent-hover: #15803d;
+      --gold: #f59e0b;
+      --dark: #0f172a;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-600: #475569;
+      --text: #334155;
+      --shadow-sm: 0 2px 4px rgba(0,0,0,0.04);
+      --shadow-md: 0 8px 20px rgba(0,0,0,0.08);
+      --shadow-lg: 0 20px 35px rgba(2, 132, 199, 0.15);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background-color: #ffffff;
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      width: min(1160px, 92%);
+      margin: 0 auto;
+    }
+
+    /* TOP BANNER */
+    .top-banner {
+      background: linear-gradient(90deg, #b91c1c, #0284c7);
+      color: #ffffff;
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    /* HEADER */
+    header {
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--gray-200);
+      box-shadow: var(--shadow-sm);
+    }
+
+    nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--dark);
+    }
+
+    .logo span { color: var(--primary); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--gray-600);
+      transition: color .2s;
+    }
+
+    .nav-links a:hover { color: var(--primary); }
+
+    /* BOTÕES */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 26px;
+      border-radius: 50px;
+      background: var(--accent);
+      color: #ffffff !important;
+      font-size: 16px;
+      font-weight: 800;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(22, 163, 74, 0.35);
+      transition: all .25s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .btn:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(22, 163, 74, 0.45);
+    }
+
+    .btn-hero {
+      font-size: 18px;
+      padding: 18px 36px;
+      width: 100%;
+      max-width: 420px;
+      border-radius: 16px;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%);
+      padding: 60px 0 70px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 45px;
+    }
+
+    .badge-natal {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 30px;
+      background: #fee2e2;
+      color: #991b1b;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      border: 1px solid #fecaca;
+    }
+
+    h1 {
+      font-size: clamp(32px, 4.3vw, 48px);
+      line-height: 1.15;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 20px;
+    }
+
+    h1 span.destaque-azul {
+      color: var(--primary);
+    }
+
+    h1 span.destaque-verde {
+      color: var(--accent);
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--gray-600);
+      margin-bottom: 24px;
+    }
+
+    .hero-checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--dark);
+    }
+
+    .check-item .icone-check {
+      background: #dcfce7;
+      color: #16a34a;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    /* CARD DA IMAGEM PRINCIPAL */
+    .hero-photo-wrapper {
+      position: relative;
+    }
+
+    .hero-photo {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 28px;
+      box-shadow: var(--shadow-lg);
+      border: 4px solid #ffffff;
+    }
+
+    .hero-photo-badge {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(8px);
+      padding: 16px 20px;
+      border-radius: 18px;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .badge-valor {
+      background: #16a34a;
+      padding: 8px 16px;
+      border-radius: 12px;
+      font-size: 22px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    /* BANNER VISUAL DE APELO */
+    .appeal-banner {
+      background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85)),
+                  url('https://images.unsplash.com/photo-1512389142860-9c449e58a543?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: #ffffff;
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .appeal-content {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .appeal-content h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .appeal-content p {
+      font-size: 19px;
+      color: #e2e8f0;
+      margin-bottom: 30px;
+    }
+
+    /* SEÇÃO COM CARDS FOTOGRÁFICOS */
+    .section {
+      padding: 85px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 55px;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      font-size: 18px;
+      color: var(--gray-600);
+    }
+
+    .photo-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .photo-card {
+      background: #ffffff;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--gray-200);
+      box-shadow: var(--shadow-sm);
+      transition: all .3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .photo-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-md);
+      border-color: #93c5fd;
+    }
+
+    .photo-card-img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+    }
+
+    .photo-card-body {
+      padding: 26px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .photo-tag {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 8px;
+      width: fit-content;
+      margin-bottom: 12px;
+    }
+
+    .tag-roupa { background: #e0f2fe; color: #0369a1; }
+    .tag-comida { background: #fef3c7; color: #b45309; }
+    .tag-amor { background: #fce7f3; color: #be185d; }
+
+    .photo-card-body h3 {
+      font-size: 21px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 10px;
+    }
+
+    .photo-card-body p {
+      font-size: 15px;
+      color: var(--gray-600);
+      line-height: 1.6;
+    }
+
+    /* GALERIA DE CRIANÇAS E INCLUSÃO */
+    .gallery-section {
+      background: #f8fafc;
+      padding: 80px 0;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 35px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      height: 220px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .4s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(15, 23, 42, 0.85));
+      padding: 20px 14px 10px;
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    /* SEÇÃO CENTRAL DE DOAÇÃO (CHECKOUT PROMINENTE) */
+    .donation-section {
+      background: linear-gradient(135deg, #075985 0%, #0369a1 100%);
+      color: #ffffff;
+      padding: 95px 0;
+    }
+
+    .donation-box {
+      max-width: 680px;
+      margin: 0 auto;
+      background: #ffffff;
+      color: var(--text);
+      border-radius: 28px;
+      padding: 45px 36px;
+      text-align: center;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+    }
+
+    .donation-box h2 {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    .box-price {
+      background: #f0fdf4;
+      border: 2px dashed #4ade80;
+      border-radius: 20px;
+      padding: 25px;
+      margin: 25px 0;
+    }
+
+    .box-price .label {
+      font-size: 14px;
+      font-weight: 800;
+      color: #166534;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .box-price .big-number {
+      font-size: 58px;
+      font-weight: 800;
+      color: #15803d;
+      line-height: 1;
+      margin: 10px 0;
+    }
+
+    .box-price .caption {
+      font-size: 14px;
+      color: #166534;
+      font-weight: 600;
+    }
+
+    .security-flags {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--gray-200);
+      font-size: 13px;
+      font-weight: 700;
+      color: #64748b;
+    }
+
+    /* TRANSPARÊNCIA */
+    .transparency-section {
+      padding: 80px 0;
+      background: #ffffff;
+    }
+
+    .transparency-card {
+      background: #f8fafc;
+      border: 1px solid var(--gray-200);
+      border-radius: 22px;
+      padding: 35px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .transparency-row {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      padding: 16px 0;
+      border-bottom: 1px solid #e2e8f0;
+      font-size: 15px;
+    }
+
+    .transparency-row:last-child { border-bottom: none; }
+    .transparency-row strong { color: var(--dark); font-weight: 700; }
+
+    /* FAQ */
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-card {
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      margin-bottom: 14px;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .faq-card summary {
+      padding: 18px 22px;
+      font-weight: 700;
+      color: var(--dark);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .faq-card p {
+      padding: 0 22px 20px;
+      color: var(--gray-600);
+      font-size: 15px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #091e34;
+      color: #94a3b8;
+      padding: 50px 0 30px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    footer strong { color: #ffffff; }
+
+    /* RESPONSIVIDADE */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 35px; }
+      .photo-cards-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-photo { height: 380px; }
+      .transparency-row { grid-template-columns: 1fr; gap: 6px; }
+      .nav-links { display: none; }
+      .btn-hero { width: 100%; max-width: none; }
+      .donation-box { padding: 30px 20px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- BARRA DE TOPO COM MOTIVO NATALINO -->
+  <div class="top-banner">
+    🎁 CAMPANHA DE NATAL & ANO NOVO: Com apenas R$ 10 você leva roupa nova e comida para crianças autistas!
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <nav>
+        <a class="logo" href="#inicio">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          Unidos pelo <span>Autismo</span>
+        </a>
+
+        <div class="nav-links">
+          <a href="#proposito">Como Ajudamos</a>
+          <a href="#galeria">Nossas Crianças</a>
+          <a href="#transparencia">Transparência</a>
+          <a href="#duvidas">Dúvidas</a>
+        </div>
+
+        <a class="btn" href="#doar">
+          💙 Quero Ajudar (R$ 10)
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+
+    <!-- HERO SECTION COM FOTO EMOCIONAL -->
+    <section class="hero">
+      <div class="container hero-grid">
+        
+        <div>
+          <div class="badge-natal">
+            🎄 Natal e Ano Novo Solidário TEA
+          </div>
+
+          <h1>
+            Só <span class="destaque-verde">R$ 10</span> garante <span class="destaque-azul">roupa nova e comida na mesa</span> para nossas crianças com autismo.
+          </h1>
+
+          <p>
+            Muitas famílias atípicas dedicam tudo o que têm para arcar com consultas e terapias, e não sobra nada para o fim de ano. Você tem o poder de fazer o Natal dessas crianças ser mágico e com dignidade.
+          </p>
+
+          <div class="hero-checklist">
+            <div class="check-item">
+              <span class="icone-check">✓</span>
+              <span><strong>Roupas novas e macias:</strong> sem costuras grossas para evitar crises sensoriais.</span>
+            </div>
+            <div class="check-item">
+              <span class="icone-check">✓</span>
+              <span><strong>Mesa cheia e Ceia de Natal:</strong> alimentos de verdade para toda a família.</span>
+            </div>
+            <div class="check-item">
+              <span class="icone-check">✓</span>
+              <span><strong>Doação de apenas R$ 10:</strong> cabe no seu bolso e faz um milagre na vida deles.</span>
+            </div>
+          </div>
+
+          <a class="btn btn-hero" href="https://app.gladepay.com.br/pagar/mateus-8bf5e" target="_blank" rel="noopener noreferrer">
+            💙 DOAR R$ 10 AGORA NO PIX
+          </a>
+        </div>
+
+        <!-- FOTO PRINCIPAL COM BADGE -->
+        <div class="hero-photo-wrapper">
+          <img
+            class="hero-photo"
+            src="https://images.unsplash.com/photo-1543332164-6e82f355badc?auto=format&fit=crop&w=1000&q=80"
+            alt="Criança sorridente acolhida com amor e carinho"
+          >
+          <div class="hero-photo-badge">
+            <div>
+              <div style="font-weight: 800; font-size: 15px;">Campanha Oficial de Natal</div>
+              <div style="font-size: 12px; color: #94a3b8;">Transformando 10 reais em sorrisos reais</div>
+            </div>
+            <div class="badge-valor">R$ 10,00</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BANNER DE APELO COM FOTO DE NATAL -->
+    <section class="appeal-banner">
+      <div class="container">
+        <div class="appeal-content">
+          <h2>"Nenhuma criança autista merece passar o Natal sem uma roupa nova e sem comida na mesa."</h2>
+          <p>
+            O final de ano é tempo de renovação. Com um pequeno gesto de solidariedade, você abraça uma mãe que luta todos os dias e presenteia uma criança que merece sentir todo o carinho do mundo.
+          </p>
+          <a class="btn" style="background: #ffffff; color: #0284c7 !important; font-size: 17px;" href="#doar">
+            💙 PARTICIPAR COM APENAS R$ 10
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO DE CARDS COM IMAGENS REAIS DO DESTINO DO DINHEIRO -->
+    <section class="section" id="proposito">
+      <div class="container">
+        
+        <div class="section-title">
+          <h2>Veja para onde vai cada centavo da sua doação</h2>
+          <p>Transparência e respeito: aqui está exatamente o que a união de doações de R$ 10 proporciona.</p>
+        </div>
+
+        <div class="photo-cards-grid">
+          
+          <!-- CARD 1: ROUPAS -->
+          <article class="photo-card">
+            <img
+              class="photo-card-img"
+              src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=800&q=80"
+              alt="Roupas novas e confortáveis de crianças para o Natal"
+            >
+            <div class="photo-card-body">
+              <span class="photo-tag tag-roupa">👕 Roupas Novas de Natal</span>
+              <h3>Roupa Nova e Conforto</h3>
+              <p>
+                Crianças com autismo sofrem muito com hipersensibilidade tátil. Compramos roupas 100% algodão, sem etiquetas incômodas e super macias para que elas passem o Natal e o Réveillon bonitas e felizes.
+              </p>
+            </div>
+          </article>
+
+          <!-- CARD 2: COMIDA -->
+          <article class="photo-card">
+            <img
+              class="photo-card-img"
+              src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80"
+              alt="Mesa farta com alimentos saudáveis para ceia de Natal"
+            >
+            <div class="photo-card-body">
+              <span class="photo-tag tag-comida">🍲 Comida & Cesta de Fim de Ano</span>
+              <h3>Comida de Verdade na Mesa</h3>
+              <p>
+                Garantimos cestas de alimentos completos e itens tradicionais para a ceia de Natal e Ano Novo. Muitas famílias enfrentam insegurança alimentar devido aos altos custos com medicamentos e terapias.
+              </p>
+            </div>
+          </article>
+
+          <!-- CARD 3: AMOR E APOIO -->
+          <article class="photo-card">
+            <img
+              class="photo-card-img"
+              src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&fit=crop&w=800&q=80"
+              alt="Acolhimento familiar e carinho com criança autista"
+            >
+            <div class="photo-card-body">
+              <span class="photo-tag tag-amor">💙 Acolhimento e Dignidade</span>
+              <h3>Esperança para as Mães e Pais</h3>
+              <p>
+                Saber que a comunidade se importa alivia a sobrecarga de mães atípicas. O seu gesto de apenas 10 reais leva alívio, alegria e a certeza de que elas não estão sozinhas nessa caminhada.
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- GALERIA DE FOTOS: CRIANÇAS E ALEGRIA -->
+    <section class="gallery-section" id="galeria">
+      <div class="container">
+        
+        <div class="section-title" style="margin-bottom: 30px;">
+          <h2>O sorriso de quem é incluído e amado</h2>
+          <p>Toda criança no espectro merece atenção, oportunidades e um fim de ano alegre.</p>
+        </div>
+
+        <div class="gallery-grid">
+          
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=600&q=80" alt="Criança brincando feliz">
+            <div class="gallery-label">Alegria e Inclusão</div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1471286174890-9c112ffca5b4?auto=format&fit=crop&w=600&q=80" alt="Criança com brinquedos">
+            <div class="gallery-label">Desenvolvimento e Afeto</div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1576867757603-05b134ebc379?auto=format&fit=crop&w=600&q=80" alt="Família reunida e unida">
+            <div class="gallery-label">Famílias Fortalecidas</div>
+          </div>
+
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?auto=format&fit=crop&w=600&q=80" alt="Menina sorrindo com carinho">
+            <div class="gallery-label">Amor sem Limites</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ÁREA DE DOAÇÃO (CONVERSÃO MÁXIMA) -->
+    <section class="donation-section" id="doar">
+      <div class="container">
+        
+        <div class="donation-box">
+          <span style="background: #fee2e2; color: #991b1b; padding: 6px 14px; border-radius: 20px; font-weight: 800; font-size: 13px;">
+            🎄 DOAÇÃO DE NATAL & ANO NOVO
+          </span>
+
+          <h2 style="margin-top: 14px;">Apenas R$ 10 Transforma um Natal</h2>
+          <p style="color: #64748b; font-size: 16px;">
+            Você não precisa de muito para mudar a vida de uma família atípica. Dez reais já garantem um alimento na mesa ou ajudam a completar uma roupinha nova.
+          </p>
+
+          <div class="box-price">
+            <div class="label">Valor sugerido da campanha</div>
+            <div class="big-number">R$ 10,00</div>
+            <div class="caption">✓ Menos que um lanche, o maior presente para uma criança com TEA</div>
+          </div>
+
+          <a
+            class="btn"
+            style="width: 100%; font-size: 19px; padding: 20px; border-radius: 16px;"
+            href="https://app.gladepay.com.br/pagar/mateus-8bf5e"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            💙 CLIQUE AQUI PARA DOAR R$ 10 (PIX)
+          </a>
+
+          <p style="font-size: 13px; color: #64748b; margin-top: 15px;">
+            Ao clicar, você será direcionado para o ambiente seguro da Gladepay para efetuar o pagamento rápido via PIX instantâneo ou cartão.
+          </p>
+
+          <div class="security-flags">
+            <span>🔒 Checkout Seguro Gladepay</span>
+            <span>⚡ PIX Copia e Cola / QR Code</span>
+            <span>💙 Doação Transparente</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TRANSPARÊNCIA E COMPROMISSO -->
+    <section class="transparency-section" id="transparencia">
+      <div class="container">
+        
+        <div class="section-title">
+          <h2>Transparência e Prestação de Contas</h2>
+          <p>Nosso trabalho é baseado na honestidade, amor e respeito a cada colaborador.</p>
+        </div>
+
+        <div class="transparency-card">
+          <div class="transparency-row">
+            <strong>Objetivo da Arrecadação:</strong>
+            <span>Aquisição de roupas confortáveis (anti-sensoriais) e itens de alimentação para a ceia de Natal e Ano Novo de crianças autistas em situação de vulnerabilidade.</span>
+          </div>
+
+          <div class="transparency-row">
+            <strong>Organizador da Campanha:</strong>
+            <span>Campanha Unidos pelo Autismo (Mateus / Equipe Solidária).</span>
+          </div>
+
+          <div class="transparency-row">
+            <strong>Comprovação das Entregas:</strong>
+            <span>Fotos e registros das entregas dos alimentos e das roupas de Natal serão documentados e disponibilizados aos doadores.</span>
+          </div>
+
+          <div class="transparency-row">
+            <strong>Contato Direto:</strong>
+            <span>Dúvidas e suporte diretamente pelo e-mail e canais informados na página de pagamento oficial.</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PERGUNTAS FREQUENTES -->
+    <section class="section" id="duvidas" style="background: #f8fafc;">
+      <div class="container">
+        
+        <div class="section-title">
+          <h2>Perguntas Frequentes</h2>
+          <p>Tire qualquer dúvida antes de realizar sua contribuição.</p>
+        </div>
+
+        <div class="faq-container">
+          
+          <div class="faq-card">
+            <details>
+              <summary>Por que apenas R$ 10 reais?</summary>
+              <p>Queremos que qualquer pessoa possa estender a mão sem prejudicar o próprio orçamento familiar. Quando dezenas de pessoas doam R$ 10, conseguimos comprar cestas inteiras e mudas completas de roupas infantis.</p>
+            </details>
+          </div>
+
+          <div class="faq-card">
+            <details>
+              <summary>Posso doar mais do que R$ 10?</summary>
+              <p>Com certeza! Se você puder contribuir com R$ 20, R$ 50 ou mais, basta realizar novas doações no link de pagamento para abençoar ainda mais crianças.</p>
+            </details>
+          </div>
+
+          <div class="faq-card">
+            <details>
+              <summary>Como o pagamento é confirmado?</summary>
+              <p>O pagamento via PIX é confirmado em menos de 10 segundos pela plataforma Gladepay. O processo é seguro e automatizado.</p>
+            </details>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <div class="container">
+      <p style="font-size: 16px; margin-bottom: 8px;"><strong>💙 Unidos pelo Autismo | Campanha Natal & Ano Novo Solidário</strong></p>
+      <p>Levando dignidade, mesa cheia e roupa nova para nossas crianças com autismo.</p>
+      <p style="margin-top: 15px; font-size: 12px; color: #64748b;">
+        © Campanha Solidária Voluntária. Todas as contribuições são direcionadas ao bem-estar e alimentação das crianças atendidas.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
